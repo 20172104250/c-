@@ -42,10 +42,16 @@ CFeet CFeet::operator-(CFeet & ojb)
 
 int main()
 {
-	CFeet A, B, C;
+	CFeet A, B, C, D, E;
 	A.setvalue(26, 11);
 	B.setvalue(17, 10);
+	C.setvalue(2, 11);
+	D.setvalue(10, 15);
+	E = A - B;
+	D = A - C;
 	C = A - B;
+	E.display();
+	D.display();
 	C.display();
     return 0;
 }
