@@ -13,8 +13,8 @@ private:
 public:
 	void setvalue (int f, int i);
 	void display();
-	CFeet add(CFeet & ojb);
-	CFeet operator +(CFeet & ojb);
+	CFeet minut(CFeet & ojb);
+	CFeet operator -(CFeet & ojb);
 
 };
 void CFeet::setvalue(int f, int i)
@@ -26,16 +26,16 @@ void CFeet:: display()
 {
 	cout << feet << "Ó¢³ß" << inches << "Ó¢´ç" << endl;
 }
-CFeet CFeet::add(CFeet&ojb)
+CFeet CFeet::minut(CFeet&ojb)
 {
 	CFeet temp;
-	temp.setvalue(feet + ojb.feet, inches + ojb.inches);
+	temp.setvalue(feet - ojb.feet, inches - ojb.inches);
 	return temp;
 }
-CFeet CFeet::operator+(CFeet & ojb)
+CFeet CFeet::operator-(CFeet & ojb)
 {
 	CFeet temp;
-	temp.setvalue(feet + ojb.feet, inches + ojb.inches);
+	temp.setvalue(feet - ojb.feet, inches - ojb.inches);
 	return temp;
 }
 
@@ -43,9 +43,9 @@ CFeet CFeet::operator+(CFeet & ojb)
 int main()
 {
 	CFeet A, B, C;
-	A.setvalue(13, 11);
+	A.setvalue(26, 11);
 	B.setvalue(17, 10);
-	C = A + B;
+	C = A - B;
 	C.display();
     return 0;
 }
