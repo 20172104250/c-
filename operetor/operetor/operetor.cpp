@@ -15,6 +15,8 @@ public:
 	void display();
 	CFeet minut(CFeet & ojb);
 	CFeet operator -(CFeet & ojb);
+	CFeet add(CFeet & ojb);
+	CFeet operator +(CFeet & ojb);
 
 };
 void CFeet::setvalue(int f, int i)
@@ -32,13 +34,24 @@ CFeet CFeet::minut(CFeet&ojb)
 	temp.setvalue(feet - ojb.feet, inches - ojb.inches);
 	return temp;
 }
+CFeet CFeet::add(CFeet&ojb)
+{
+	CFeet temp;
+	temp.setvalue(feet + ojb.feet, inches + ojb.inches);
+	return temp;
+}
 CFeet CFeet::operator-(CFeet & ojb)
 {
 	CFeet temp;
 	temp.setvalue(feet - ojb.feet, inches - ojb.inches);
 	return temp;
 }
-
+CFeet CFeet::operator+(CFeet & ojb)
+{
+	CFeet temp;
+	temp.setvalue(feet + ojb.feet, inches + ojb.inches);
+	return temp;
+}
 
 int main()
 {
@@ -47,7 +60,7 @@ int main()
 	B.setvalue(17, 10);
 	C.setvalue(2, 11);
 	D.setvalue(10, 15);
-	E = A - B;
+	E = A + B - C;
 	D = A - C;
 	C = A - B;
 	E.display();
